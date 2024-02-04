@@ -1,6 +1,6 @@
 import csv
 import requests
-import time
+
 
 fqdn = input("Enter yor Moodle FQDN (my.moodleserver.com)")
 baseUrl = f'https://{fqdn}/webservice/rest/server.php'
@@ -23,7 +23,6 @@ try:
                     url+f'users[0][username]={line["username"]}&users[0][password]={line["password"]}&users[0][firstname]={line["firstname"]}&users[0][lastname]={line["lastname"]}&users[0][email]={line["email"]}')
                 print(addtoMoodle.text)
                 print(line)
-                time.sleep(10)
                 url = baseUrl + \
                     f'?wstoken={wstoken}&wsfunction=core_cohort_add_cohort_members&moodlewsrestformat=json&members[0][cohorttype][type]=id&members[0][cohorttype][value]={cohortId}'
                 addtoCohort = requests.post(
