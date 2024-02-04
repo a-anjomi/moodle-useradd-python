@@ -7,9 +7,6 @@ baseUrl = f'https://{fqdn}/webservice/rest/server.php'
 wstoken = input("Please Enter Your Moodle Token:")
 cohortId = input('Enter Your Cohort ID:')
 
-# x = requests.post(url)
-
-# print(x.text)
 
 
 try:
